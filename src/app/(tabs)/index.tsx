@@ -2,13 +2,11 @@ import { StyleSheet } from 'react-native';
 
 import { Text, View } from '@/components/Themed';
 
-export default function TabOneScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Home Feed</Text>
+import posts from '../../../assets/data/posts.json';
+import PostListItem from '@/components/PostListItem';
 
-    </View>
-  );
+export default function HomeFeed() {
+  return <PostListItem post={posts[0]} />;
 }
 
 const styles = StyleSheet.create({
