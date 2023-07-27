@@ -10,6 +10,7 @@ import React, { useLayoutEffect, useState } from 'react';
 import dummyUser from '../../../assets/data/user.json';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 import { User } from '@/types';
+import ExperienceListItem from '@/components/ExperienceListItem';
 
 const UserProfile = () => {
   const [user, setUser] = useState<User>(dummyUser);
@@ -45,7 +46,9 @@ const UserProfile = () => {
 
       <View style={styles.container}>
         <Text style={styles.title}>Experience</Text>
-
+        {user.experience?.map((experience) => (
+          <ExperienceListItem experience={experience} key={experience.id} />
+        ))}
 
       </View>
     </ScrollView>
